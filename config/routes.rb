@@ -2,16 +2,16 @@ Rails.application.routes.draw do
   get 'pages/home'
   root 'pages#home'
 
-  get 'pages/register'
+  get 'pages/register', as: :register
 
-  get 'pages/add_trips'
+  get 'pages/add_trips', as: :offer_a_ride
 
-  get 'pages/search_trips'
+  get 'pages/search_trips', as: :find_a_ride
 
   get 'pages/pay'
 
   get '/auth/:provider/callback', to: 'sessions#create'
-  get "/signout" => "sessions#destroy", :as => :signout
+  get "/signout" => "sessions#destroy", as: :signout
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

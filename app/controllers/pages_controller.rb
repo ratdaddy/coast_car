@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   end
 
   def register
+    session[:user_type] = params[:user_type]
   end
 
   def add_trips

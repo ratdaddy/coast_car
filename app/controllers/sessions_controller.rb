@@ -4,7 +4,11 @@ class SessionsController < ApplicationController
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) ||
       User.create_with_omniauth(auth)
     session[:user_id] = user.id
-    redirect_to root_url, :notice => "Signed in!"
+    if session[:user_type] == 'rider'
+      redirect_to find_a_ride_path, notice: 'Signed in'
+    else
+      redirect_to offer_a_ride_path, notice: 'Signed in'
+    end
   end
 
   def destroy

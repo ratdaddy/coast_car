@@ -1,4 +1,8 @@
 <div id="main">
   <h1>Welcome To Coast Car</h1>
+
+  <%= link_to "Find a ride", register_path(user_type: :rider) %><br/>
+  <%= link_to "Offer a ride", register_path(user_type: :driver) %>
+
   <p>A Startup Weekend Conejo enterprise</p>
 </div>
