@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'pages/add_trips', as: :offer_a_ride
 
   get 'pages/search_trips', as: :find_a_ride
+  post 'pages/rider_profile', as: :rider_profile
+  get 'pages/driver_contact', as: :driver_contact
 
   get 'pages/pay'
 
