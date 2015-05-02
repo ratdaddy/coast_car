@@ -2,7 +2,70 @@
 <p>Find me in app/views/pages/search_trips.html.erb</p>
 
 <%= form_for @user, url: rider_profile_path, method: :post do |f| %>
+  <%= f.label :name %>
   <%= f.text_field :name %>
+
+  <%= f.label :birthdate %>
+  <%= f.date_field :birthdate %>
+
+  <%= f.label :gender %>
+  <%= f.select :gender,
+      options_for_select(
+      User.gender_label,
+      @user.gender),
+      include_blank: true %>
+
+  <%= f.label :number_of_seats %>
+  <%= f.number_field :rider_default_number_of_seats, in: 0..5 %>
+
+  <%= f.label :music_audio %>
+  <%= f.select :rider_preference_music_audio,
+      options_for_select(
+      User.rider_preference_music_audio_label,
+      @user.rider_preference_music_audio),
+      include_blank: true %>
+
+  <%= f.label :smoking %>
+  <%= f.select :rider_preference_smoking,
+      options_for_select(
+      User.rider_preference_smoking_label,
+      @user.rider_preference_smoking),
+      include_blank: true %>
+
+  <%= f.label :pets %>
+  <%= f.select :rider_preference_pets,
+      options_for_select(
+      User.rider_preference_pets_label,
+      @user.rider_preference_pets),
+      include_blank: true %>
+
+  <%= f.label :allergies %>
+  <%= f.select :rider_preference_allergies,
+      options_for_select(
+      User.rider_preference_allergies_label,
+      @user.rider_preference_allergies),
+      include_blank: true %>
+
+  <%= f.label :food %>
+  <%= f.select :rider_preference_food,
+      options_for_select(
+      User.rider_preference_food_label,
+      @user.rider_preference_food),
+      include_blank: true %>
+
+  <%= f.label :children %>
+  <%= f.select :rider_preference_children,
+      options_for_select(
+      User.rider_preference_children_label,
+      @user.rider_preference_children),
+      include_blank: true %>
+
+  <%= f.label :conversation %>
+  <%= f.select :rider_preference_conversation,
+      options_for_select(
+      User.rider_preference_conversation_label,
+      @user.rider_preference_conversation),
+      include_blank: true %>
 
   <%= f.submit %>
 <% end %>
