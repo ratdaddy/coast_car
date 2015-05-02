@@ -11,8 +11,12 @@
       <h1>Road trips made simple.</h1>
     </section>
     <section>
-    <%= link_to "Find a ride", register_path(user_type: :rider) %><br/>
-    <%= link_to "Offer a ride", register_path(user_type: :driver) %>
+    <%= link_to "Find a ride", current_user ?
+        find_a_ride_path :
+        register_path(user_type: :rider) %><br/>
+    <%= link_to "Offer a ride", current_user ?
+        offer_a_ride_path :
+        register_path(user_type: :driver) %>
   </section>
     <section class="destinations">
       <div class="cards">
