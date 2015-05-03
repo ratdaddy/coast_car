@@ -1,57 +1,239 @@
 /** Reset **/
-
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 /** Fonts **/
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+/** Page Styles **/
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  width: 100%;
+}
+
+.intro {
+  width: 100%;
+  height: 100vh;
+  background: image-url("sand-background-2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+nav {
+  @include outer-container;
+  line-height: 3.5em;
+  padding: 1em 0;
+  h1 {
+    @include span-columns(4);
+    font-size: 3em;
+    img {
+      max-width: 60px;
+    }
+  }
+  ul {
+    font-size: 1.5em;
+    @include span-columns(8);
+    text-align: right;
+    vertical-align: middle;
+    li {
+      display: inline;
+      margin-left: 2em;
+    }
+  }
+}
+
+.where {
+  @include outer-container;
+  h1 {
+    padding-top: .5em;
+    @include span-columns(12);
+    text-align: center;
+    font-size: 6em;
+    text-shadow: -2px 4px 0 rgba(0, 0, 0, .4);
+  }
+}
+
+.destinations {
+  @include outer-container;
+  margin-top: 4em;
+}
+
+.howitworks {
+  width: 100%;
+  height: 100vh;
+  color: #1b1b1b;
+  border-top: 10px solid #F5A623;
+  article {
+    @include outer-container;
+    h1 {
+      font-size: 3em;
+      padding: 1em 0;
+    }
+    p {
+      font-size: 1.5em;
+    }
+  }
+}
 
 /** Refills **/
 
@@ -80,7 +262,6 @@ table {
   $card-image-background: #DBD199;
   $card-image-hover-background: lighten($card-image-background, 5%);
   $card-margin: 1em;
-
   @include flex-basis(15em);
   @include flex-grow(1);
   @include transition (all 0.2s ease-in-out);
@@ -89,15 +270,38 @@ table {
   cursor: pointer;
   margin: 0 $card-margin 0 $card-margin;
   position: relative;
-  
-  a:link, a:visited, a:hover, a:active {
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
     color: #F5A623;
   }
-
+  a:hover {
+    text-decoration: underline;
+  }
+  .price {
+    line-height: 0;
+    position: relative;
+    bottom: 31px;
+    padding: 5px 1em;
+    color: #fff;
+    z-index: 9001;
+    font-size: 1.5em;
+    background: #F5A623;
+    small {
+      font-size: .5em;
+      vertical-align: super;
+    }
+  }
   .card-image {
     overflow: hidden;
-    max-height: 250px;
-
+    height: 180px;
     img {
       @include transition (all 0.2s ease-in-out);
       background: $card-image-background;
@@ -106,114 +310,30 @@ table {
       width: 100%;
     }
   }
-
   .card-header {
     @include transition (all 0.2s ease-in-out);
-    text-align: center;
     background-color: $card-header-background;
     border-bottom: $card-border;
     border-radius: $base-border-radius $base-border-radius 0 0;
     font-weight: bold;
     line-height: 1.5em;
     padding: ($base-spacing / 3) ($base-spacing / 2);
+    small {
+      text-transform: uppercase;
+      font-size: 10px;
+      vertical-align: middle;
+      display: block;
+      text-align: left;
+      font-weight: normal;
+    }
   }
-
   .card-copy {
     font-size: 0.9em;
     line-height: 1.5em;
     padding: ($base-spacing / 2) ($base-spacing / 2);
-
+    border-radius: 0 0 $base-border-radius $base-border-radius;
     p {
       margin: 0 0 ($base-spacing / 2);
     }
   }
-  
-  &:focus,
-  &:hover {
-    background-color: $card-hover-background;
-    
-    .card-image img {
-      background: $card-image-hover-background;
-    }
-  
-    .card-header {
-      background-color: $card-hover-background;
-    }
-  }
-
-  &:active {
-    background-color: $card-background;
-
-    .card-header {
-      background-color: $card-background;
-    }
-  }
-}
-
-
-/** Page Styles **/
-
-* { box-sizing: border-box; }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
-  color: #fff;
-}
-
-a:link, a:visited, a:hover, a:active {
-  color: #fff;
-  text-decoration: none;
-}
-
-main {
-  width: 100%;
-}
-
-.intro {
-  width: 100%;
-  height: 100vh;
-  background: image-url("sand-background-2.jpg") no-repeat center center scroll; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-nav {
-  @include outer-container;
-  line-height: 3.5em;
-  padding: 1em 0;
-  h1 {
-    @include span-columns(4);
-    font-size: 3em;
-  }
-  ul {
-    font-size: 1.5em;
-    @include span-columns(8);
-    text-align: right;
-    vertical-align: middle;
-    li {
-      display: inline;
-      margin-left: 2em;
-    }
-  }
-}
-
-.where {
-  @include outer-container;
-  h1 {
-    padding-top: .5em;
-    @include span-columns(12);
-    text-align: center;
-    font-size: 6em;
-    text-shadow: -2px 4px 0 rgba(0,0,0,.2);
-  }
-}
-
-.destinations {
-  @include outer-container;
-  margin-top: 8em;
 }

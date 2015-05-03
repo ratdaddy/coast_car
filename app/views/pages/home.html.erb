@@ -1,10 +1,10 @@
 <main>
   <section class="intro">
     <nav>
-      <h1>COAST CAR</h1>
+      <h1><%= image_tag "logo.png" %> Coast Car</h1>
       <ul>
-        <li><a href="">Become a driver</a></li>
-        <li><a href="">How it works</a></li>
+        <li><a href="">Offer a ride</a></li>
+        <li><%= link_to "How it works", "#howdoesitwork" %></li>
       </ul>
     </nav>
     <section class="where">
@@ -14,43 +14,53 @@
       <div class="cards">
         <div class="card">
           <div class="card-image">
+            <%= image_tag "bonnaroo2.jpg" %>
+          </div>
+          <span class="price"><small>$</small>45</span>
+          <div class="card-header">
+            <small>Destination:</small>
+            Los Angeles, CA to Manchester, TN
+          </div>
+          <div class="card-copy">
+            <p><a href="">#bonnaroo</a> <a href="">#festival</a> I'm heading to Bonnaroo! It's going to be a ton of fun and I can't wait to go or something</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">
             <%= image_tag "bonnaroo.jpg" %>
           </div>
+          <span class="price"><small>$</small>45</span>
           <div class="card-header">
-            Los Angeles, CA -> Manchester, TN
+            <small>Destination:</small>
+            Los Angeles, CA to Las Vegas, NV
           </div>
           <div class="card-copy">
-            <p><a href="">#bonnaroo</a> <a href="">#festival</a> I'm heading to Bonnaroo!</p>
+            <p><a href="">#bonnaroo</a> <a href="">#festival</a> I'm heading to Bonnaroo! It's going to be a ton of fun and I can't wait to go or something</p>
           </div>
         </div>
 
         <div class="card">
           <div class="card-image">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png" alt="">
+            <%= image_tag "bonnaroo3.jpg" %>
           </div>
+          <span class="price"><small>$</small>45</span>
           <div class="card-header">
-            Another Card
+            <small>Destination:</small>
+            Los Angeles, CA to San Francisco, CA
           </div>
           <div class="card-copy">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-          </div>
-          <div class="card-details">
-            Seats: 3
+            <p><a href="">#bonnaroo</a> <a href="">#festival</a> I'm heading to Bonnaroo! It's going to be a ton of fun and I can't wait to go or something</p>
           </div>
         </div>
-
-        <div class="card">
-          <div class="card-image">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
-          </div>
-          <div class="card-header">
-            The Last Card
-          </div>
-          <div class="card-copy">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </div>
-        </div>
+        
       </div>
     </section>
+  </section>
+  <section id="howdoesitwork" class="howitworks">
+    <article>
+      <h1>How does it work?</h1>
+      <p>You get in your car and drive.</p>
+    </article>
   </section>
 </main>
