@@ -54,6 +54,7 @@ class PagesController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name,
+                                 :email,
                                  :birthdate,
                                  :gender,
                                  :drivers_license_state,
