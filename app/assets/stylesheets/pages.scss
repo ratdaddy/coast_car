@@ -177,6 +177,7 @@ main {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  border-top: 10px solid #F5A623;
 }
 
 nav {
@@ -286,6 +287,7 @@ nav {
     text-decoration: underline;
   }
   .price {
+    height: 0;
     line-height: 0;
     position: relative;
     bottom: 31px;
