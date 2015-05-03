@@ -150,7 +150,7 @@ body {
   padding: 0;
   width: 100%;
   font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
-  color: #fff;
+  color: #1b1b1b;
 }
 
 a:link,
@@ -167,11 +167,11 @@ a:hover {
 
 main {
   width: 100%;
+  color: #fff;
 }
 
 .intro {
   width: 100%;
-  height: 100vh;
   background: image-url("sand-background-2.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -182,23 +182,30 @@ main {
 
 nav {
   @include outer-container;
-  line-height: 3.5em;
+  line-height: 70px;
   padding: 1em 0;
   h1 {
-    @include span-columns(4);
+    @include span-columns(5);
     font-size: 3em;
     img {
-      max-width: 60px;
+      max-height: 42px;
+      vertical-align: baseline;
+    }
+    a:hover {
+      text-decoration: none;
     }
   }
   ul {
     font-size: 1.5em;
-    @include span-columns(8);
+    @include span-columns(7);
     text-align: right;
     vertical-align: middle;
     li {
       display: inline;
       margin-left: 2em;
+    }
+    .username {
+      text-transform: capitalize;
     }
   }
 }
@@ -220,18 +227,21 @@ nav {
 }
 
 .howitworks {
+  background: #efefef;
   width: 100%;
-  height: 100vh;
   color: #1b1b1b;
   border-top: 10px solid #F5A623;
+  padding-bottom: 4em;
   article {
     @include outer-container;
     h1 {
       font-size: 3em;
       padding: 1em 0;
+      color: #aaa;
     }
     p {
       font-size: 1.5em;
+      margin-bottom: 2em;
     }
   }
 }
@@ -242,6 +252,7 @@ nav {
   @include display(flex);
   @include flex-wrap(wrap);
   @include justify-content(space-between);
+  margin-bottom: 5em;
 }
 
 .card {
@@ -268,7 +279,6 @@ nav {
   @include transition (all 0.2s ease-in-out);
   background-color: $card-background;
   border-radius: $base-border-radius;
-  cursor: pointer;
   margin: 0 $card-margin 0 $card-margin;
   position: relative;
   &:first-child {
@@ -338,4 +348,53 @@ nav {
       margin: 0 0 ($base-spacing / 2);
     }
   }
+}
+
+/** Signup **/
+
+.register {
+  width: 100%;
+  height: 100vh;
+  background: image-url("sand-background-2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-top: 10px solid #F5A623;
+}
+
+.signup {
+  @include outer-container;
+}
+
+.modal {
+  padding: 3em 6em 6em 6em;
+  color: #1b1b1b;
+  text-align: center;
+  margin-top: 3em;
+  @include shift(3);
+  @include span-columns(6);
+  background: rgba(255,255,255,.85);
+  border-radius: 4px;
+  h1 {
+      font-size: 2em;
+      padding: 0 0 1em 0;
+  }
+  div {
+    border-radius: 3px;
+    cursor: pointer;
+    a {
+      padding-left: 10px;
+    }
+  }
+  .twitter {
+    padding: 20px;
+    background: #00a0d1;
+    margin-bottom: 1em;
+  }
+  .facebook {
+    padding: 20px;
+    background: #3b5998;
+  }
+  
 }

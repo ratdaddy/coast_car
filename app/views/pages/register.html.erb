@@ -1,3 +1,12 @@
-<h1>Create Your Account</h1>
-<%= link_to "Sign in with Twitter", "/auth/twitter" %><br/>
-<%= link_to "Sign in with Facebook", "/auth/facebook" %>
+<main class="register">
+ <nav>
+    <h1><%= image_tag "logo.png" %> <%= link_to "Coast Car", root_path %></h1>
+  </nav>
+  <section class="signup">
+    <div class="modal">
+      <h1>Create Your Account</h1>
+      <div class="twitter"><%= icon "twitter", class: 'fa-inverse' %><%= link_to "Sign in with Twitter", "/auth/twitter" %></div>
+      <div class="facebook"><%= icon "facebook", class: 'fa-inverse' %><%= link_to "Sign in with Facebook", "/auth/facebook" %></div>
+    </div>
+  </section>
+</main>
