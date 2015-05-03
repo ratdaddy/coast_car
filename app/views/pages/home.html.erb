@@ -6,13 +6,17 @@
        <% if current_user %>
         <li class="username">
             Welcome, <%= current_user.name %>!
-            <!-- <%= link_to "Sign Out", signout_path %> -->
         </li>
         <% end %>
         <li><%= link_to "Offer a ride", current_user ?
         offer_a_ride_path :
         register_path(user_type: :driver) %></li>
         <li><%= link_to "How it works", "#howdoesitwork" %></li>
+        <% if current_user %>
+        <li>
+            <%= link_to "Sign Out", signout_path %>
+        </li>
+        <% end %>
       </ul>
     </nav>
     <section class="where">
