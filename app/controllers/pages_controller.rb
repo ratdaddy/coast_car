@@ -8,11 +8,15 @@ class PagesController < ApplicationController
   end
 
   def add_trips
-    @user = current_user
+    #@user = current_user
+    @ride = Ride.new
   end
 
   def submit_trip
-    current_user.update(user_params)
+    @ride = Ride.new(ride_params)
+    @ride.user_id = current_user.id
+    @ride.save
+    #current_user.update(user_params)
     redirect_to create_driver_profile_path
   end
 
@@ -72,6 +76,23 @@ class PagesController < ApplicationController
                                  :rider_preference_food,
                                  :rider_preference_children,
                                  :rider_preference_conversation
+                                 )
+  end
+
+  def ride_params
+    params.require(:ride).permit(:departure_address,
+                                 :destination_address,
+                                 :departure_date,
+                                 :departure_time,
+                                 :car_make,
+                                 :car_model,
+                                 :car_year,
+                                 :car_comfort_level,
+                                 :car_condition,
+                                 :seats_available,
+                                 :luggage_restriction,
+                                 :price,
+                                 :comment
                                  )
   end
 end
