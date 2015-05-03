@@ -23,26 +23,26 @@
       <h1>Create Your Account</h1>
         <%= form_for @user, url: new_driver_path, method: :post do |f| %>
           <%= f.label :name %>
-          <%= f.text_field :name, placeholder: "Jane Doe", required: true %>
+          <%= f.text_field :name, placeholder: "Jane Doe", required: false %>
           <br>
           <%= f.label :email %>
-          <%= f.text_field :email, required: true %>
+          <%= f.text_field :email, required: false %>
           <br>
           <%= f.label :birthdate %>
-          <%= f.date_field :birthdate, required: true %>
+          <%= f.date_field :birthdate, required: false %>
           <br>
           <%= f.label :gender %>
           <%= f.select :gender,
               options_for_select(
               User.gender_label,
               @user.gender),
-              required: true %>
+              required: false %>
           <br>
           <%= f.label :drivers_license_state %>
-          <%= f.text_field :drivers_license_state, placeholder: "California", required: true %>
+          <%= f.text_field :drivers_license_state, placeholder: "California", required: false %>
           <br>
           <%= f.label :drivers_insurance_company %>
-          <%= f.text_field :drivers_insurance_company, placeholder: "State Farm", required: true %>
+          <%= f.text_field :drivers_insurance_company, placeholder: "State Farm", required: false %>
           <br>
           <%= f.label :allow_music, class: "same-line"  %><%= f.check_box :rider_restriction_allow_music %>
           <br>

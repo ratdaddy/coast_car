@@ -24,31 +24,31 @@
 
 <%= form_for @ride, url: submit_trip_path, method: :post do |f| %>
   <%= f.label :departure_address %>
-  <%= f.text_field :departure_address, :placeholder => "123 Main Street, Los Angeles, CA 90210", required: true %>
+  <%= f.text_field :departure_address, :placeholder => "123 Main Street, Los Angeles, CA 90210", required: false %>
   <br>
   <%= f.label :destination_address %>
-  <%= f.text_field :destination_address, :placeholder => "456 Seventh Street, Las Vegas, NV 89101", required: true %>
+  <%= f.text_field :destination_address, :placeholder => "456 Seventh Street, Las Vegas, NV 89101", required: false %>
   <br>
   <%= f.label :departure_date %>
-  <%= f.date_select :departure_date, order: [:month, :day, :year], required: true %>
+  <%= f.date_select :departure_date, order: [:month, :day, :year], required: false %>
   <br>
   <%= f.label :departure_time %>
-  <%= f.time_select :departure_time, {minute_step: 15, ampm: true}, require: true %>
+  <%= f.time_select :departure_time, {minute_step: 15, ampm: true}, required: false %>
   <br>
   <%= f.label :car_make %>
-  <%= f.text_field :car_make, :placeholder => "Tesla", required: true %>
+  <%= f.text_field :car_make, :placeholder => "Tesla", required: false %>
   <br>
   <%= f.label :car_model %>
-  <%= f.text_field :car_model, :placeholder => "Model S", required: true %>
+  <%= f.text_field :car_model, :placeholder => "Model S", required: false %>
   <br>
   <%= f.label :car_year %>
-  <%= f.text_field :car_year, :placeholder => "2016", required: true %>
+  <%= f.text_field :car_year, :placeholder => "2016", required: false %>
   <br>
   <%= f.label :car_comfort_level %>
   <%= f.select :car_comfort_level,
       options_for_select(
       Ride.car_comfort_level_label,
-      @ride.car_comfort_level), :placeholder => "2016", required: true %>
+      @ride.car_comfort_level), :placeholder => "2016", required: false %>
   <br>
   <%= f.label :car_condition %>
   <%= f.select :car_condition,
