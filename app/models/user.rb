@@ -85,6 +85,7 @@ class User < ActiveRecord::Base
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
       user.email = auth["info"].fetch("email", nil)
+      user.image_url = auth["info"].fetch("image", nil)
     end
   end
 end
