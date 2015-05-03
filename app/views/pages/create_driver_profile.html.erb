@@ -22,48 +22,49 @@
     <div class="modal">
       <h1>Create Your Account</h1>
 
-<%= form_for @user, url: new_driver_path, method: :post do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :birthdate %>
-  <%= f.date_field :birthdate %>
-  <br>
-  <%= f.label :gender %>
-  <%= f.select :gender,
-      options_for_select(
-      User.gender_label,
-      @user.gender),
-      include_blank: true %>
-  <br>
-  <%= f.label :drivers_license_state %>
-  <%= f.text_field :drivers_license_state %>
-  <br>
-  <%= f.label :drivers_insurance_company %>
-  <%= f.text_field :drivers_insurance_company %>
-  <br>
-  <%= f.label :allow_music %>
-  <%= f.check_box :rider_restriction_allow_music %>
-  <br>
-  <%= f.label :non_smoking %>
-  <%= f.check_box :rider_restriction_non_smoking %>
-  <br>
-  <%= f.label :allow_dogs %>
-  <%= f.check_box :rider_restriction_allow_dogs %>
-  <br>
-  <%= f.label :allow_cats %>
-  <%= f.check_box :rider_restriction_allow_cats %>
-  <br>
-  <%= f.label :allow_children %>
-  <%= f.check_box :rider_restriction_allow_children %>
-  <br>
-  <%= f.label :allow_food %>
-  <%= f.check_box :rider_restriction_allow_food %>
-  <br>
-  <%= f.submit 'Complete your profile' %>
-<% end %>
-
-
+      <%= form_for @user, url: new_driver_path, method: :post do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <br>
+      <%= f.label :birthdate %>
+      <%= f.date_field :birthdate %>
+      <br>
+      <%= f.label :gender %>
+      <%= f.select :gender,
+          options_for_select(
+          User.gender_label,
+          @user.gender),
+          include_blank: true %>
+      <br>
+      <%= f.label :drivers_license_state %>
+      <%= f.text_field :drivers_license_state %>
+      <br>
+      <%= f.label :drivers_insurance_company %>
+      <%= f.text_field :drivers_insurance_company %>
+      <br>
+      <%= f.label :allow_music %>
+      <%= f.check_box :rider_restriction_allow_music %>
+      <br>
+      <%= f.label :non_smoking %>
+      <%= f.check_box :rider_restriction_non_smoking %>
+      <br>
+      <%= f.label :allow_dogs %>
+      <%= f.check_box :rider_restriction_allow_dogs %>
+      <br>
+      <%= f.label :allow_cats %>
+      <%= f.check_box :rider_restriction_allow_cats %>
+      <br>
+      <%= f.label :allow_children %>
+      <%= f.check_box :rider_restriction_allow_children %>
+      <br>
+      <%= f.label :allow_food %>
+      <%= f.check_box :rider_restriction_allow_food %>
+      <br>
+      <%= f.submit 'Complete your profile' %>
+      <% end %>
     </div>
   </section>
 </main>
