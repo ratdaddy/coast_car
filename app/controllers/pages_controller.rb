@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
   def register
     session[:user_type] = params[:user_type]
+    session[:contact_driver] = params[:contact_driver] == 'true'
   end
 
   def add_trips
@@ -33,10 +34,18 @@ class PagesController < ApplicationController
 
   def rider_profile
     current_user.update(user_params)
-    redirect_to driver_contact_path
+    if session[:contact_driver]
+      redirect_to driver_contact_path
+    else
+      redirect_to thanks_path
+    end
   end
 
   def driver_contact
+  end
+
+  def new_driver_contact
+    redirect_to thanks_path
   end
 
   def pay

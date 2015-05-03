@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'pages/search_trips', as: :find_a_ride
   post 'pages/rider_profile', as: :rider_profile
   get 'pages/driver_contact', as: :driver_contact
+  post 'pages/new_driver_contact', as: :new_driver_contact
 
   get 'pages/thanks', as: :thanks
 
@@ -19,6 +20,10 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#create'
   get "/signout" => "sessions#destroy", as: :signout
+
+  [ 'bonnaroo', 'sasquatch', 'comic_con', 'we_fest', 'sound_set' ].each do |location|
+    get "offered_rides/#{location}", as: "rides_#{location}"
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
