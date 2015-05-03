@@ -341,6 +341,7 @@ nav {
     border-radius: $base-border-radius $base-border-radius 0 0;
     font-weight: bold;
     line-height: 1.5em;
+    margin-top: -1em;
     padding: ($base-spacing / 3) ($base-spacing / 2);
     small {
       text-transform: uppercase;
