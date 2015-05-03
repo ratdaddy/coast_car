@@ -48,31 +48,28 @@
   <%= f.select :car_comfort_level,
       options_for_select(
       Ride.car_comfort_level_label,
-      @ride.car_comfort_level),
-      include_blank: true, :placeholder => "2016", required: true %>
+      @ride.car_comfort_level), :placeholder => "2016", required: true %>
   <br>
   <%= f.label :car_condition %>
   <%= f.select :car_condition,
       options_for_select(
       Ride.car_condition_label,
-      @ride.car_condition),
-      include_blank: true %>
+      @ride.car_condition) %>
   <br>
   <%= f.label "Number of seats available" %>
-  <%= f.number_field :seats_available, in: 1..8 %>
+  <%= f.number_field :seats_available, in: 1..8, placeholder: 1 %>
   <br>
   <%= f.label :luggage_restrictions %>
   <%= f.select :luggage_restriction,
       options_for_select(
       Ride.luggage_restriction_label,
-      @ride.luggage_restriction),
-      include_blank: true %>
+      @ride.luggage_restriction) %>
   <br>
   <%= f.label "Price per seat" %>
-  <%= f.number_field :price, class: "price-dollar-sign" %>
+  <%= f.number_field :price, class: "price-dollar-sign", placeholder: 45 %>
   <br>
   <%= f.label "Trip Details" %>
-  <%= f.text_area :comment, :placeholder => "Additional information regarding your trip" %>
+  <%= f.text_area :comment, :placeholder => "Some more information about this ride. Where are you going? Why are you looking to offer rides along this route? What are you about?" %>
   <br>
   <%= f.submit 'Submit' %>
 <% end %>
