@@ -84,7 +84,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
-      user.email = auth.fetch("email")
+      user.email = auth.fetch("email", nil)
     end
   end
 end
