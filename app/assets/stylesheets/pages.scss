@@ -246,7 +246,15 @@ nav {
     }
     p {
       font-size: 1.5em;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
+    }
+    ul {
+      font-size: 1.2em;
+      list-style-type: disc;
+      li {
+        margin-left: 2em;
+        margin-bottom: 1em;
+      }
     }
   }
 }
