@@ -11,7 +11,7 @@
         <li class="offerbtn"><%= link_to "Offer a ride", current_user ?
         offer_a_ride_path :
         register_path(user_type: :driver) %></li>
-        <li><%= link_to "How it works", "#howdoesitwork" %></li>
+        <li><%= link_to "How it works", "#{root_path}#howdoesitwork" %></li>
         <% if current_user %>
         <li>
             <%= link_to "Sign Out", signout_path %>
@@ -164,12 +164,12 @@
     <article>
     
         <h1>Who are we?</h1>
-        <p>Coast Car makes it very easy for people to quickly form a road trip group to a common    destination. <br><br>
-• Passengers without a car or without a valid license can find a ride to a far off destination.<br>
-• Drivers making the trek can find companions and earn extra money.<br>
-        • Provides a safe, green, and cheap way to travel and see the country.
-        </p>
-    
+        <p>Coast Car makes it very easy for people to quickly form a road trip group to a common destination.</p>
+        <ul>
+          <li>Passengers without a car or without a valid license can find a ride to a far off destination.</li>
+          <li>Drivers making the trek can find companions and earn extra money.</li>
+          <li>Provides a safe, green, and cheap way to travel and see the country.</li>
+        </ul>
       <h1>Do I need car insurance?</h1>
         <p>Yes, you need current and valid car insurance.</p>
         <h1>Does it matter what year my car is?</h1>
