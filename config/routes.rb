@@ -5,10 +5,15 @@ Rails.application.routes.draw do
   get 'pages/register', as: :register
 
   get 'pages/add_trips', as: :offer_a_ride
+  post 'pages/submit_trip', as: :submit_trip
+  get 'pages/create_driver_profile', as: :create_driver_profile
+  post 'pages/new_driver', as: :new_driver
 
   get 'pages/search_trips', as: :find_a_ride
   post 'pages/rider_profile', as: :rider_profile
   get 'pages/driver_contact', as: :driver_contact
+
+  get 'pages/thanks', as: :thanks
 
   get 'pages/pay'
 

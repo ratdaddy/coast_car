@@ -9,3 +9,9 @@
 </main>
 <h1>Pages#add_trips</h1>
 <p>Find me in app/views/pages/add_trips.html.erb</p>
+
+<%= form_for @user, url: submit_trip_path, method: :post do |f| %>
+  <!-- TODO: take this out later - needed something for this form to submit -->
+  <%= f.text_field :name  %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Create Your Driver</h1>
+
+<%= form_for @user, url: new_driver_path, method: :post do |f| %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %>

@@ -7,6 +7,24 @@ class PagesController < ApplicationController
   end
 
   def add_trips
+    @user = current_user
+  end
+
+  def submit_trip
+    current_user.update(user_params)
+    redirect_to create_driver_profile_path
+  end
+
+  def create_driver_profile
+    @user = current_user
+  end
+
+  def new_driver
+    current_user.update(user_params)
+    redirect_to thanks_path
+  end
+
+  def thanks
   end
 
   def search_trips
