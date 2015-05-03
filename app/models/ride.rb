@@ -8,11 +8,9 @@ class Ride < ActiveRecord::Base
                             ]
 
   enum car_comfort_level: [
-                           :one_star,
-                           :two_star,
-                           :three_star,
-                           :four_star,
-                           :five_star,
+                           :cramped,
+                           :satisfactory,
+                           :spacious,
                           ]
 
   enum car_condition: [
