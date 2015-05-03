@@ -8,7 +8,7 @@
             Welcome, <%= current_user.name %>!
         </li>
         <% end %>
-        <li><%= link_to "Offer a ride", current_user ?
+        <li class="offerbtn"><%= link_to "Offer a ride", current_user ?
         offer_a_ride_path :
         register_path(user_type: :driver) %></li>
         <li><%= link_to "How it works", "#howdoesitwork" %></li>
