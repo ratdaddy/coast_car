@@ -8,15 +8,11 @@ class PagesController < ApplicationController
   end
 
   def add_trips
-    #@user = current_user
     @ride = Ride.new
   end
 
   def submit_trip
-    @ride = Ride.new(ride_params)
-    @ride.user_id = current_user.id
-    @ride.save
-    #current_user.update(user_params)
+    current_user.create_ride(ride_params)
     redirect_to create_driver_profile_path
   end
 

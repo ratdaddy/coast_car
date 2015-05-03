@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_one :ride
   # No validations - all fields are optional right now
   enum gender: [
                 :male,

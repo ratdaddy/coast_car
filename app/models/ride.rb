@@ -1,4 +1,5 @@
 class Ride < ActiveRecord::Base
+  belongs_to :user
   # Any validations?
   enum luggage_restriction: [
                              :carry_on_only,
