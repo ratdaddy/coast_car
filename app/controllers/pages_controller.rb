@@ -41,9 +41,28 @@ class PagesController < ApplicationController
 
   def pay
   end
-  
+
   private
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name,
+                                 :birthdate,
+                                 :gender,
+                                 :drivers_license_state,
+                                 :drivers_insurance_company,
+                                 :rider_restriction_allow_music,
+                                 :rider_restriction_non_smoking,
+                                 :rider_restriction_allow_dogs,
+                                 :rider_restriction_allow_cats,
+                                 :rider_restriction_allow_kids,
+                                 :rider_restriction_allow_food,
+                                 :rider_default_number_of_seats,
+                                 :rider_preference_music_audio,
+                                 :rider_preference_smoking,
+                                 :rider_preference_pets,
+                                 :rider_preference_allergies,
+                                 :rider_preference_food,
+                                 :rider_preference_children,
+                                 :rider_preference_conversation
+                                 )
   end
 end
