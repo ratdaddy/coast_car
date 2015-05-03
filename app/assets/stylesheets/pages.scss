@@ -137,7 +137,6 @@ table {
 /** Fonts **/
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
-
 /** Page Styles **/
 
 * {
@@ -185,7 +184,7 @@ nav {
   line-height: 70px;
   padding: 1em 0;
   h1 {
-    @include span-columns(5);
+    @include span-columns(4);
     font-size: 3em;
     img {
       max-height: 42px;
@@ -197,7 +196,7 @@ nav {
   }
   ul {
     font-size: 1.5em;
-    @include span-columns(7);
+    @include span-columns(8);
     text-align: right;
     vertical-align: middle;
     li {
@@ -245,7 +244,6 @@ nav {
     }
   }
 }
-
 /** Refills **/
 
 .cards {
@@ -349,7 +347,6 @@ nav {
     }
   }
 }
-
 /** Signup **/
 
 .register {
@@ -374,11 +371,11 @@ nav {
   margin-top: 3em;
   @include shift(3);
   @include span-columns(6);
-  background: rgba(255,255,255,.85);
+  background: rgba(255, 255, 255, .85);
   border-radius: 4px;
   h1 {
-      font-size: 2em;
-      padding: 0 0 1em 0;
+    font-size: 2em;
+    padding: 0 0 1em 0;
   }
   div {
     border-radius: 3px;
@@ -396,5 +393,54 @@ nav {
     padding: 20px;
     background: #3b5998;
   }
-  
+}
+
+.register-next {
+  width: 100%;
+  background: image-url("sand-background-2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-top: 10px solid #F5A623;
+}
+
+.create-driver {
+  height: 140vh;
+  .modal {
+    padding: 3em 3em 6em 3em;
+    color: #1b1b1b;
+    text-align: left;
+    margin-top: 3em;
+    @include shift(3);
+    @include span-columns(6);
+    background: rgba(255, 255, 255, .85);
+    border-radius: 4px;
+    h1 {
+      font-size: 2em;
+      padding: 0 0 2em 0;
+      text-align: center;
+    }
+    label {
+      margin-left: 10%;
+      display: inline-block;
+      max-width: 200px;
+      min-width: 100px;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-size: 1.2em;
+    }
+    input:last-child {
+      display: block;
+      margin: 1em auto;
+      border-radius: 3px;
+      cursor: pointer;
+      padding: 20px;
+      background: #00a0d1;
+      margin-bottom: 1em;
+      border: none;
+      color: #fff;
+      font-size: 1em;
+    }
+  }
 }
