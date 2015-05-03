@@ -33,7 +33,7 @@
   <%= f.date_select :departure_date %>
   <br>
   <%= f.label :departure_time %>
-  <%= f.time_select :departure_time %>
+  <%= f.time_select :departure_time, {:minute_step => 15, :ampm => true} %>
   <br>
   <%= f.label :car_make %>
   <%= f.text_field :car_make %>
