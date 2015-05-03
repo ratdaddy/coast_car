@@ -1,8 +1,14 @@
-<main>
+<main class="home">
   <section class="intro">
     <nav>
-      <h1><%= image_tag "logo.png" %> Coast Car</h1>
+      <h1><%= image_tag "logo.png" %> <%= link_to "Coast Car", root_path %></h1>
       <ul>
+       <% if current_user %>
+        <li class="username">
+            Welcome, <%= current_user.name %>!
+            <!-- <%= link_to "Sign Out", signout_path %> -->
+        </li>
+        <% end %>
         <li><%= link_to "Offer a ride", current_user ?
         offer_a_ride_path :
         register_path(user_type: :driver) %></li>
@@ -14,6 +20,97 @@
     </section>
     <section class="destinations">
       <div class="cards">
+       
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag "bonnaroo2.jpg" %>
+          </div>
+          <span class="price"><small>$</small>45</span>
+          <div class="card-header">
+            <small>Destination:</small>
+            Los Angeles, CA to Manchester, TN
+          </div>
+          <div class="card-copy">
+            <p><a href="">#bonnaroo</a> <a href="">#festival</a> I'm heading to Bonnaroo! It's going to be a ton of fun and I can't wait to go or something</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag "bonnaroo.jpg" %>
+          </div>
+          <span class="price"><small>$</small>45</span>
+          <div class="card-header">
+            <small>Destination:</small>
+            Los Angeles, CA to Las Vegas, NV
+          </div>
+          <div class="card-copy">
+            <p><a href="">#bonnaroo</a> <a href="">#festival</a> I'm heading to Bonnaroo! It's going to be a ton of fun and I can't wait to go or something</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag "bonnaroo3.jpg" %>
+          </div>
+          <span class="price"><small>$</small>45</span>
+          <div class="card-header">
+            <small>Destination:</small>
+            Los Angeles, CA to San Francisco, CA
+          </div>
+          <div class="card-copy">
+            <p><a href="">#bonnaroo</a> <a href="">#festival</a> I'm heading to Bonnaroo! It's going to be a ton of fun and I can't wait to go or something</p>
+          </div>
+        </div>
+        
+      </div>
+      <div class="cards">
+       
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag "bonnaroo2.jpg" %>
+          </div>
+          <span class="price"><small>$</small>45</span>
+          <div class="card-header">
+            <small>Destination:</small>
+            Los Angeles, CA to Manchester, TN
+          </div>
+          <div class="card-copy">
+            <p><a href="">#bonnaroo</a> <a href="">#festival</a> I'm heading to Bonnaroo! It's going to be a ton of fun and I can't wait to go or something</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag "bonnaroo.jpg" %>
+          </div>
+          <span class="price"><small>$</small>45</span>
+          <div class="card-header">
+            <small>Destination:</small>
+            Los Angeles, CA to Las Vegas, NV
+          </div>
+          <div class="card-copy">
+            <p><a href="">#bonnaroo</a> <a href="">#festival</a> I'm heading to Bonnaroo! It's going to be a ton of fun and I can't wait to go or something</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag "bonnaroo3.jpg" %>
+          </div>
+          <span class="price"><small>$</small>45</span>
+          <div class="card-header">
+            <small>Destination:</small>
+            Los Angeles, CA to San Francisco, CA
+          </div>
+          <div class="card-copy">
+            <p><a href="">#bonnaroo</a> <a href="">#festival</a> I'm heading to Bonnaroo! It's going to be a ton of fun and I can't wait to go or something</p>
+          </div>
+        </div>
+        
+      </div>
+      <div class="cards">
+       
         <div class="card">
           <div class="card-image">
             <%= image_tag "bonnaroo2.jpg" %>
@@ -61,10 +158,26 @@
   </section>
   <section id="howdoesitwork" class="howitworks">
     <article>
-      <h1>How does it work?</h1>
-      <p>You get in your car and drive.</p>
-      <h1>How do I get paid?</h1>
-      <p>You set your own rate and yada yada</p>
+      <h1>Do I need car insurance?</h1>
+        <p>Yes, you need current and valid car insurance</p>
+        <h1>Does it matter what year my car is?</h1>
+        <p>No, as long as the car is in reliable working condition and will provide a clean and comfortable experience for drivers.</p>
+        <h1>Does it matter what condition my car is in?</h1>
+        <p>Yes, your car must be in working condition and it must be clean and free of hazardous objects to provide passengers with a safe and comfortable ride.</p>
+        <h1>Does it matter where my drivers license was issued?</h1>
+        <p>Yes, it is preferred if your license was issued from the state in which your ride will begin.</p>
+        <h1>Am I an employee of Coast Car?</h1>
+        <p>No, you are not an employee of Coast Car, you are an independent contractor who is being payed through Coast Car.</p>
+        <h1>How do I get payed?</h1>
+        <p>You will be payed through our application. Money will be transferred from Coast Car to your bank account after the completion of the ride.</p>
+        <h1>Is this service safe?</h1>
+        <p>Yes! Your safety is our primary priority. Our app will implement safety features such as a panic button, notifications when you stray from your path, and the option to ride in a car with only your gender.</p>
+        <h1>Are the drivers insured?</h1>
+        <p>Yes, it is mandatory for all of our drivers to have current and validated insurance</p>
+        <h1>How do I pay the driver?</h1>
+        <p>You pay through our app. You must pay with either credit card or paypal. Your payment info will be safely encrypted and never shared.</p>
+        <h1>How will I ensure that I avoid contact with things that induce my allergies?</h1>
+        <p>A pre-ride questionaire will ensure that you do not get put in a ride that has had exposure to things that cause your allergies.</p>
     </article>
   </section>
 </main>
