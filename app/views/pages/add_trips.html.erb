@@ -1,56 +1,82 @@
-<h1>Add a Ride</h1>
+<main class="register-next">
+  <nav>
+      <h1><%= image_tag "logo.png" %> <%= link_to "Coast Car", root_path %></h1>
+      <ul>
+       <% if current_user %>
+        <li class="username">
+            Welcome, <%= current_user.name %>!
+        </li>
+        <% end %>
+        <li><%= link_to "Offer a ride", current_user ?
+        offer_a_ride_path :
+        register_path(user_type: :driver) %></li>
+        <li><%= link_to "How it works", "#howdoesitwork" %></li>
+        <% if current_user %>
+        <li>
+            <%= link_to "Sign Out", signout_path %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+  <section class="create-driver">
+    <div class="modal">
+      <h1>Where are ya headed?</h1>
 
 <%= form_for @ride, url: submit_trip_path, method: :post do |f| %>
   <%= f.label :departure_address %>
   <%= f.text_field :departure_address %>
-
+  <br>
   <%= f.label :destination_address %>
   <%= f.text_field :destination_address %>
-
+  <br>
   <%= f.label :departure_date %>
   <%= f.date_select :departure_date %>
-
+  <br>
   <%= f.label :departure_time %>
   <%= f.time_select :departure_time %>
-
+  <br>
   <%= f.label :car_make %>
   <%= f.text_field :car_make %>
-
+  <br>
   <%= f.label :car_model %>
   <%= f.text_field :car_model %>
-
+  <br>
   <%= f.label :car_year %>
   <%= f.text_field :car_year %>
-
+  <br>
   <%= f.label :car_comfort_level %>
   <%= f.select :car_comfort_level,
       options_for_select(
       Ride.car_comfort_level_label,
       @ride.car_comfort_level),
       include_blank: true %>
-
+  <br>
   <%= f.label :car_condition %>
   <%= f.select :car_condition,
       options_for_select(
       Ride.car_condition_label,
       @ride.car_condition),
       include_blank: true %>
-
+  <br>
   <%= f.label :seats_available %>
   <%= f.number_field :seats_available, in: 1..8 %>
-
+  <br>
   <%= f.label :luggage_restrictions %>
   <%= f.select :luggage_restriction,
       options_for_select(
       Ride.luggage_restriction_label,
       @ride.luggage_restriction),
       include_blank: true %>
-
+  <br>
   <%= f.label :price %>
   <%= f.number_field :price %>
-
+  <br>
   <%= f.label :comment %>
   <%= f.text_area :comment %>
-
-  <%= f.submit %>
+  <br>
+  <%= f.submit 'Submit' %>
 <% end %>
+
+    </div>
+  </section>
+</main>
