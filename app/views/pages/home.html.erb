@@ -27,29 +27,29 @@
        
         <div class="card">
           <div class="card-image">
-            <%= image_tag "bonnaroo2.jpg" %>
+            <%= link_to image_tag("bonnaroo2.jpg"), rides_bonnaroo_path %>
           </div>
           <span class="price"><small>$</small>45</span>
           <div class="card-header">
             <small>Destination:</small>
-            Your City, CA to Destination, NV
+            <%= link_to "Los Angeles, CA to Bonnaroo!", rides_bonnaroo_path %>
           </div>
           <div class="card-copy">
-            <p><a href="">#tag</a> <a href="">#your</a> <a href="">#destination</a> This is a quick excerpt about where you're headed. This information is a nice introduction to the trip you are taking and the destination you are headed to in your own words.</p>
+            <p><%= link_to "#bonnaroo", rides_bonnaroo_path %> <%= link_to "#music", rides_bonnaroo_path %> <%= link_to "#festival", rides_bonnaroo_path %> Hey guys, I'm headed to Bonnaroo with a friend and I've got two open seats. Looking to split the gas and have a fun little road trip. Open to most music, no death metal please. No smoking.</p>
           </div>
         </div>
 
         <div class="card">
           <div class="card-image">
-            <%= image_tag "bonnaroo.jpg" %>
+            <%= link_to image_tag("bonnaroo3.jpg"), rides_sasquatch_path %>
           </div>
           <span class="price"><small>$</small>55</span>
           <div class="card-header">
             <small>Destination:</small>
-            Your City, CA to Destination, AZ
+            <%= link_to "Los Angeles, CA to Sasquatch!", rides_sasquatch_path %>
           </div>
           <div class="card-copy">
-            <p><a href="">#tag</a> <a href="">#your</a> <a href="">#destination</a> This is a quick excerpt about where you're headed. This information is a nice introduction to the trip you are taking and the destination you are headed to in your own words.</p>
+            <p><%= link_to "#Sasquatch", rides_sasquatch_path %> <%= link_to "#Music", rides_sasquatch_path %> <%= link_to "#Seattle", rides_sasquatch_path %> Hey guys, I'm headed to Sasquatch all by my lonesome and I have *three* seats available. EDM only. I don't stop for bathroom breaks. DEAL WITH IT! <3</p>
           </div>
         </div>
 <!--

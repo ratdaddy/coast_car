@@ -137,6 +137,7 @@ table {
 /** Fonts **/
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
 /** Page Styles **/
 
 * {
@@ -325,7 +326,7 @@ nav {
   }
   .card-image {
     overflow: hidden;
-    height: 180px;
+    height: 220px;
     img {
       @include transition (all 0.2s ease-in-out);
       background: $card-image-background;
@@ -336,13 +337,19 @@ nav {
   }
   .card-header {
     @include transition (all 0.2s ease-in-out);
-    background-color: $card-header-background;
+    background-color: #efefef;
     border-bottom: $card-border;
     border-radius: $base-border-radius $base-border-radius 0 0;
     font-weight: bold;
     line-height: 1.5em;
     margin-top: -1em;
     padding: ($base-spacing / 3) ($base-spacing / 2);
+    a:link, a:visited {
+      color: #1b1b1b;
+    }
+    a:hover, a:active {
+      color: #F5A623;
+    }
     small {
       text-transform: uppercase;
       font-size: 10px;
@@ -358,7 +365,7 @@ nav {
     padding: ($base-spacing / 2) ($base-spacing / 2);
     border-radius: 0 0 $base-border-radius $base-border-radius;
     p {
-      margin: 0 0 ($base-spacing / 2);
+      margin: 1em;
     }
   }
 }
