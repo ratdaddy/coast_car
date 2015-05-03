@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150502224504) do
+ActiveRecord::Schema.define(version: 20150503023512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,17 +20,17 @@ ActiveRecord::Schema.define(version: 20150502224504) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.date     "birthdate"
     t.integer  "gender"
-    t.string   "drivers_license_state",         limit: 50
+    t.string   "drivers_license_state",            limit: 50
     t.string   "drivers_insurance_company"
     t.boolean  "rider_restriction_allow_music"
     t.boolean  "rider_restriction_non_smoking"
     t.boolean  "rider_restriction_allow_dogs"
     t.boolean  "rider_restriction_allow_cats"
-    t.boolean  "rider_restriction_allow_kids"
+    t.boolean  "rider_restriction_allow_children"
     t.boolean  "rider_restriction_allow_food"
     t.integer  "rider_default_number_of_seats"
     t.integer  "rider_preference_music_audio"

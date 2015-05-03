@@ -62,7 +62,7 @@ class PagesController < ApplicationController
                                  :rider_restriction_non_smoking,
                                  :rider_restriction_allow_dogs,
                                  :rider_restriction_allow_cats,
-                                 :rider_restriction_allow_kids,
+                                 :rider_restriction_allow_children,
                                  :rider_restriction_allow_food,
                                  :rider_default_number_of_seats,
                                  :rider_preference_music_audio,
